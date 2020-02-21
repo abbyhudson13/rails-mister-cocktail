@@ -8,3 +8,6 @@
 <%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), :class => "button" %>
 
 </div>
+
+<%= cl_image_tag("cocktail",
+      width: 400, height: 300, crop: :fill) %>

@@ -8,6 +8,7 @@
       data: { confirm: "Are you sure?" } %></p>
     <% end %>
 </ul>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <%= link_to "Back to cocktails", root_path(@cocktails), :class => "button"  %>
 <%= link_to "New ingredient", new_cocktail_dose_path(@cocktail), :class => "button"  %>
 </div>
