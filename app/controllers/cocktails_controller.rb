@@ -23,6 +23,7 @@ class CocktailsController < ApplicationController
   end
 
   private
+
     def set_cocktail
       @cocktail = Cocktail.find(params[:id])
     end
