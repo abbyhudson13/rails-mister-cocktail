@@ -1,13 +1,22 @@
-<div class="container">
-<h1>The best cocktails in town</h1>
-<ul class ="d-flex justify-content-around">
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to(cocktail.name, cocktail_path(cocktail)) %></li>
-  <% end %>
-</ul>
-<%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), :class => "button" %>
-
+<div class="home-banner">
+  <h1>
+  <span id="banner-typed-text"></span>
+  </h1>
 </div>
 
-<%= cl_image_tag("cocktail",
-      width: 400, height: 300, crop: :fill) %>
+<div class="container p-5">
+  <div class="row justify-content-around">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card-product m-1 col-lg-3 col-md-4 col-sm-12">
+      <%= cl_image_tag cocktail.photo.key%>
+      <%= link_to(cocktail.name, cocktail_path(cocktail)) %>
+    </div>
+    <% end %>
+  </div>
+</div>
+  <div class="container d-flex justify-content-center">
+    <%= link_to "Add a new cocktail", new_cocktail_path(@cocktail), :class => "button" %>
+  </div>
+
+
+
